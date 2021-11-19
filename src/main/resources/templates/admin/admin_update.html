@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+
+<style>
+  article {
+    border: 4px solid #333;
+    margin: 0 auto;
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+  }
+</style>
+<head>
+  <meta charset="UTF-8">
+  <title>New User</title>
+</head>
+
+<body>
+<br/>
+<br/>
+<br/>
+<div th:align="right" th:marginwidth="400px">
+  <form th:method="GET" th:action="@{/logout}">
+    <input type="submit" value="Выйти">
+  </form>
+</div>
+<article>
+  <form th:method="PATCH" th:action="@{/index/{id}(id=${user.getId()})}">
+    <label for="name">Name</label>
+    <input th:type="text" th:field="*{user.name}" id="name"/>
+    <br/><br/>
+    <label for="surname">Last Name</label>
+    <input th:type="text" th:field="*{user.surname}" id="surname"/>
+    <br/><br/>
+    <label for="password">Password</label>
+    <input type="text" th:field="*{user.password}" id="password"/>
+    <br/><br/>
+    <label for="age">Age</label>
+    <input type="text" th:field="*{user.age}" id="age"/>
+    <br/><br/>
+    <label for="mail">Email</label>
+    <input th:type="text" th:field="*{user.email}" id="mail"/>
+    <br/><br/>
+    <label for="roles">Role</label>
+    <select th:field="*{user.roleInd}" id="roles">
+      <option value="2">User</option>
+      <option value="1">Admin</option>
+      <option value="3">User&Admin</option>
+    </select>
+    <br/><br/>
+    <input type="submit" value="Edit"/>
+  </form>
+</article>
+</body>
+</html>
