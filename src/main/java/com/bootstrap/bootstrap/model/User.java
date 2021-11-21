@@ -157,7 +157,7 @@ public class User implements UserDetails {
         } else if (roleInd == 3) {
             return "[Admin, User]";
         }
-        return "Нет роли";
+        return "Нет Role";
     }
 
 }

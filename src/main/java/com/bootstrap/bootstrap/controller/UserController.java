@@ -72,4 +72,6 @@ public class UserController {
         service.deleteUser(user.getId());
         return "redirect:/admin/admin_panel";
     }
+
+
 }

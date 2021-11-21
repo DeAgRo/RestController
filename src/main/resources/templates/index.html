@@ -41,10 +41,10 @@
         <nav class="bg-white col-2 content-center vh-100">
             <div class="av flex-column nav-pills" id="v-pills-tab"
                  role="tablist" aria-orientation="vertical">
-                <a class="nav-link  my-3 text-center" id="v-pills-home-tab" th:href="@{/admin/admin_panel}"
+                <a sec:authorize="hasRole('ADMIN')" class="nav-link  my-3 text-center" id="v-pills-home-tab" th:href="@{/admin/admin_panel}"
                    type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Admin
                 </a>
-                <a class="nav-link active text-center" type="button" role="link"
+                <a class="nav-link active text-center my-3" type="button" role="link"
                    aria-controls="v-pills-profile" aria-selected="true">User
                 </a>
             </div>
@@ -66,7 +66,7 @@
                 <div class="tab-pane fade show active bg-white" id="nav-home" role="tabpanel"
                      aria-labelledby="nav-home-tab">
                     <div class="card">
-                        <div class="card-header">About user</div>
+                        <div class="card-header">User information</div>
                         <div class="card-body">
                             <table class="table table-striped">
                                 <tr>
@@ -84,10 +84,6 @@
                                     <td th:text="${user.getEmail()}"></td>
                                     <td th:text="${user.getAge()}"></td>
                                     <td th:text="${user.rolesToString()}"></td>
-                                    <td>
-
-
-                                    </td>
                                 </tr>
                             </table>
                         </div>
